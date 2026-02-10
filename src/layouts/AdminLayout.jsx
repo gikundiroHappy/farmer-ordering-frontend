@@ -1,0 +1,15 @@
+import React from "react";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
+
+export default function AdminLayout({ children }) {
+  return (
+    <div className="flex">
+      <Sidebar role="ADMIN" />
+      <div className="flex-1">
+        <Navbar />
+        <div className="p-6">{children}</div>
+      </div>
+    </div>
+  );
+}
