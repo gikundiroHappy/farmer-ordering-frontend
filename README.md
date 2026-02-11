@@ -54,23 +54,15 @@ You can see a live demo of the app [here](https://farmer-ordering-frontend-three
 
 ### Steps
 1. Clone the repository
-
-```sh
-git clone https://github.com/yourusername/farmer-ordering-frontend.git
-
+   ```sh
+   git clone https://github.com/gikundiroHappy/farmer-ordering-frontend.git
 2. Navigate to the project directory
-
-```sh
-cd farmer-ordering-frontend
-
+   ```sh
+   cd farmer-ordering-frontend
 3. Install dependencies
-
-```sh
-npm install
-Start the development server
-
-```sh
-npm run dev
+   ```sh
+   npm install
+   Start the development server
 
 ### Usage
 
