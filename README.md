@@ -70,7 +70,7 @@ You can see a live demo of the app [here](https://farmer-ordering-frontend-three
 
 As a Farmer:
 - Register with your phone number
-- Enter OTP (1234)
+- Login with: Your phone number OTP (1234)
 - Navigate to Dashboard
 - Click "Create Order" to submit fertilizer request
 - View your orders in "My Orders" page
