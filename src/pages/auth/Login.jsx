@@ -8,17 +8,21 @@ export default function Login() {
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await API.post("/auth/login", { phoneNumber, otp });
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
-
-      res.data.role === "ADMIN" ? navigate("/admin/dashboard") : navigate("/farmer/dashboard");
+      localStorage.setItem("fullname", res.data.fullName);
+      setLoading(false);
+      res.data.role === "ADMIN" ? navigate("/admin/dashboard") : navigate("/farmer/dashboard");     
     } catch {
-      setError("Invalid phone number or OTP");
+      setLoading(false);
+      setError("Invalid phone number or OTP");     
     }
   };
 
@@ -90,8 +94,8 @@ export default function Login() {
             />
           </div>
 
-          <button className="w-full bg-[#37503F] text-white py-3 rounded-lg hover:opacity-90 transition">
-            Login
+          <button className="w-full bg-[#37503F] text-white py-3 rounded-lg hover:opacity-90 transition" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
           </button>
 
           <p className="text-sm text-center mt-6">

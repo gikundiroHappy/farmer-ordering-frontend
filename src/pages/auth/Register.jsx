@@ -9,14 +9,17 @@ export default function Register() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState({ type: "", text: "" });
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await API.post("/auth/register", {
         fullName,
         phoneNumber,
       });
+      setLoading(false);
       setMessage({
         type: "success",
         text: res.data.message,
@@ -24,6 +27,7 @@ export default function Register() {
       setTimeout(() => navigate("/"), 1500);
 
     } catch (err) {
+      setLoading(false);
       setMessage({
         type: "error",
         text: err.response?.data?.message || "Registration failed",
@@ -83,8 +87,8 @@ export default function Register() {
             />
           </div>
 
-          <button className="w-full bg-[#37503F] text-white py-3 rounded-lg hover:opacity-90 transition">
-            Register
+          <button className="w-full bg-[#37503F] text-white py-3 rounded-lg hover:opacity-90 transition" disabled={loading}>
+            {loading ? "Registering..." : "Register"}
           </button>
 
           <p className="text-sm text-center mt-6">

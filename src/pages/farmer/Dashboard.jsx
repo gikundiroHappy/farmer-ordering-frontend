@@ -25,6 +25,7 @@ export default function FarmerDashboard() {
   });
   
   const token = localStorage.getItem("token");
+  const farmerName = localStorage.getItem("fullname") || "Farmer";
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,7 +64,7 @@ export default function FarmerDashboard() {
     <DashboardLayout>
       <div className="mb-8 pt-10">
         <h1 className="text-3xl font-bold text-[#2D4533] mb-2">
-          Welcome back, Farmer!
+          Welcome back, {farmerName}!
         </h1>
         <p className="text-gray-600">
           Manage your fertilizer orders and track their status here.

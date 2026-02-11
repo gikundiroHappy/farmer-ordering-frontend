@@ -38,7 +38,7 @@ export default function Navbar() {
             
             <div className="hidden md:block text-left">
               <p className="font-semibold text-gray-800">
-                {role === "ADMIN" ? "Administrator" : "Farmer"}
+                {role === "ADMIN" ? "Admin" : "Farmer"}
               </p>
               <p className="text-sm text-gray-500">Welcome back!</p>
             </div>
