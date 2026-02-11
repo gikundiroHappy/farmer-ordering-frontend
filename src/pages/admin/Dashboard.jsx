@@ -8,6 +8,7 @@ import {
   TrendingUp,
   BarChart3
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const [metrics, setMetrics] = useState({ 
@@ -157,12 +158,12 @@ export default function Dashboard() {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
               <div className="space-y-3">
-                <a 
-                  href="/admin/requests" 
+                <Link 
+                  to="/admin/requests" 
                   className="block w-full px-4 py-3 bg-[#2D4533] text-white rounded-lg hover:bg-[#37503F] transition-colors text-center"
                 >
                   Manage Requests
-                </a>
+                </Link>
               </div>
             </div>
 
