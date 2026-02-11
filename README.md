@@ -62,7 +62,9 @@ You can see a live demo of the app [here](https://farmer-ordering-frontend-three
 3. Install dependencies
    ```sh
    npm install
-   Start the development server
+4. Start the development server
+   ```sh
+   npm run dev
 
 ### Usage
 
